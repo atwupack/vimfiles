@@ -9,17 +9,20 @@ call plug#begin('~/vimfiles/plugged')
 Plug 'vim-syntastic/syntastic'
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 Plug 'prabirshrestha/async.vim'
+Plug 'NLKNguyen/papercolor-theme'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTree'] }
+Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': ['NERDTreeToggle', 'NERDTree'] }
 Plug 'chriskempson/base16-vim'
 "Plug 'vim-airline/vim-airline'
 "Plug 'vim-airline/vim-airline-themes'
 Plug 'itchyny/lightline.vim'
-Plug 'felixjung/vim-base16-lightline'
-Plug 'scrooloose/nerdcommenter'
+"Plug 'felixjung/vim-base16-lightline'
+"Plug 'daviesjamie/vim-base16-lightline'
+ Plug 'scrooloose/nerdcommenter'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
@@ -65,9 +68,9 @@ imap <c-space> <Plug>(asyncomplete_force_refresh)
  if has("statusline")
     set laststatus=2
     set noshowmode
-    "let g:lightline = {
-      "\ 'colorscheme': 'base16_atelier_cave',
-      "\ }
+    let g:lightline = {
+      \ 'colorscheme': 'PaperColor'
+      \ }
 "    set statusline=%<%f\ %h%m%r%=%{\"[\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\").\"]\ \"}%k\ %-14.(%l,%c%V%)\ %P
     " statusline for Syntastic
 "    set statusline+=%#warningmsg#
@@ -76,8 +79,10 @@ imap <c-space> <Plug>(asyncomplete_force_refresh)
  endif
 
 " set theme
-colorscheme base16-atelier-cave-light
-"colorscheme base16-solarized-light
+"colorscheme base16-atelier-cave-light
+"colorscheme base16-solarized-dark
+set background=light
+colorscheme PaperColor
 
 " enable unicode
 " http://vim.wikia.com/wiki/Working_with_Unicode
@@ -99,6 +104,13 @@ nmap <F9> :TagbarToggle<CR>
 
 " Toggle NERDTree with F8
 map <F8> :NERDTreeToggle<CR>
+"autocmd StdinReadPre * let s:std_in=1
+"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+let g:NERDTreeMinimalUI=1
+let g:NERDTreeShowBookmarks=1
+let g:NERDTreeShowHidden=1
+let g:NERDTreeSortHiddenFirst=1
+let g:NERDTreeChDirMode=2
 
 " tab settings
 " http://vim.wikia.com/wiki/Converting_tabs_to_spaces
