@@ -22,7 +22,7 @@ Plug 'chriskempson/base16-vim'
 Plug 'itchyny/lightline.vim'
 "Plug 'felixjung/vim-base16-lightline'
 "Plug 'daviesjamie/vim-base16-lightline'
- Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdcommenter'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
@@ -47,10 +47,10 @@ set directory=$TEMP\\\\
 " enable rls
 if executable('rls')
     au User lsp_setup call lsp#register_server({
-        \ 'name': 'rls',
-        \ 'cmd': {server_info->['rustup', 'run', 'stable', 'rls']},
-        \ 'whitelist': ['rust'],
-        \ })
+                \ 'name': 'rls',
+                \ 'cmd': {server_info->['rustup', 'run', 'stable', 'rls']},
+                \ 'whitelist': ['rust'],
+                \ })
 endif 
 let g:LanguageClient_autoStart = 1
 " Maps K to hover, gd to goto definition, F2 to rename
@@ -65,18 +65,24 @@ inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<cr>"
 imap <c-space> <Plug>(asyncomplete_force_refresh)
 
 " statusline
- if has("statusline")
+if has("statusline")
     set laststatus=2
     set noshowmode
     let g:lightline = {
-      \ 'colorscheme': 'PaperColor'
-      \ }
-"    set statusline=%<%f\ %h%m%r%=%{\"[\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\").\"]\ \"}%k\ %-14.(%l,%c%V%)\ %P
+                \ 'colorscheme': 'PaperColor'
+                \ }
+    "    set statusline=%<%f\ %h%m%r%=%{\"[\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\").\"]\ \"}%k\ %-14.(%l,%c%V%)\ %P
     " statusline for Syntastic
-"    set statusline+=%#warningmsg#
-"    set statusline+=%{SyntasticStatuslineFlag()}
-"    set statusline+=%*
- endif
+    "    set statusline+=%#warningmsg#
+    "    set statusline+=%{SyntasticStatuslineFlag()}
+    "    set statusline+=%*
+endif
+
+" set the font for the GUI
+if has('gui_running')
+    set guifont=Consolas:h9
+endif
+
 
 " set theme
 "colorscheme base16-atelier-cave-light
@@ -87,13 +93,13 @@ colorscheme PaperColor
 " enable unicode
 " http://vim.wikia.com/wiki/Working_with_Unicode
 if has("multi_byte")
-  if &termencoding == ""
-    let &termencoding = &encoding
-  endif
-  set encoding=utf-8
-  setglobal fileencoding=utf-8
-  "setglobal bomb
-  set fileencodings=ucs-bom,utf-8,latin1
+    if &termencoding == ""
+        let &termencoding = &encoding
+    endif
+    set encoding=utf-8
+    setglobal fileencoding=utf-8
+    "setglobal bomb
+    set fileencodings=ucs-bom,utf-8,latin1
 endif
 
 " enable line numbers
