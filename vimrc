@@ -4,6 +4,7 @@ source $VIMRUNTIME/mswin.vim
 behave mswin
 
 filetype plugin on
+filetype plugin indent on
 
 call plug#begin('~/vimfiles/plugged')
 Plug 'vim-syntastic/syntastic'
