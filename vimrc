@@ -55,9 +55,9 @@ if executable('rls')
 endif 
 let g:LanguageClient_autoStart = 1
 " Maps K to hover, gd to goto definition, F2 to rename
-nnoremap <silent> K :LspHover
-nnoremap <silent> gd :LspDefinition
-nnoremap <silent> <F2> :LspRename
+nnoremap <silent> K :LspHover<CR>
+nnoremap <silent> gd :LspDefinition<CR>
+nnoremap <silent> <F2> :LspRename<CR>
 
 " autocompletion
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
