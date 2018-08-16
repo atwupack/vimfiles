@@ -28,6 +28,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'bling/vim-bufferline'
+Plug 'https://gitlab.com/dbeniamine/todo.txt-vim.git'
 call plug#end()
 
 " search config
