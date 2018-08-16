@@ -1,7 +1,7 @@
+source $VIMRUNTIME/defaults.vim
 " Activate all the handy Windows key-bindings we're used to.
 " source $VIMRUNTIME/vimrc_example.vim
 source $VIMRUNTIME/mswin.vim
-behave mswin
 
 filetype plugin on
 filetype plugin indent on
@@ -36,6 +36,18 @@ set ignorecase
 set smartcase
 set incsearch
 set hlsearch
+
+" remove toolbar
+" http://vim.wikia.com/wiki/Hide_toolbar_or_menus_to_see_more_text
+set guioptions-=T
+
+" smart home and end
+" http://vim.wikia.com/wiki/Smart_home
+noremap <expr> <Home> (col('.') == matchend(getline('.'), '^\s*')+1 ? '0' : '^')
+noremap <expr> <End> (col('.') == match(getline('.'), '\s*$') ? '$' : 'g_')
+vnoremap <expr> <End> (col('.') == match(getline('.'), '\s*$') ? '$h' : 'g_')
+imap <Home> <C-o><Home>
+imap <End> <C-o><End>
 
 " Shortcut to format whole file
 " Use Ctrl-Shift-F like Eclipse
