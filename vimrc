@@ -17,7 +17,7 @@ Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
 Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTree'] }
 Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': ['NERDTreeToggle', 'NERDTree'] }
-Plug 'chriskempson/base16-vim'
+"Plug 'chriskempson/base16-vim'
 "Plug 'vim-airline/vim-airline'
 "Plug 'vim-airline/vim-airline-themes'
 Plug 'itchyny/lightline.vim'
@@ -29,6 +29,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'bling/vim-bufferline'
 Plug 'https://gitlab.com/dbeniamine/todo.txt-vim.git'
+Plug 'moll/vim-bbye'
 call plug#end()
 
 " search config
@@ -85,11 +86,6 @@ if has("statusline")
     let g:lightline = {
                 \ 'colorscheme': 'PaperColor'
                 \ }
-    "    set statusline=%<%f\ %h%m%r%=%{\"[\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\").\"]\ \"}%k\ %-14.(%l,%c%V%)\ %P
-    " statusline for Syntastic
-    "    set statusline+=%#warningmsg#
-    "    set statusline+=%{SyntasticStatuslineFlag()}
-    "    set statusline+=%*
 endif
 
 " set the font for the GUI
