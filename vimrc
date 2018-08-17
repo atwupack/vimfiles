@@ -1,3 +1,4 @@
+language en-US
 source $VIMRUNTIME/defaults.vim
 " Activate all the handy Windows key-bindings we're used to.
 " source $VIMRUNTIME/vimrc_example.vim
