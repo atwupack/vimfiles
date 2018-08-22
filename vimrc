@@ -3,6 +3,7 @@ source $VIMRUNTIME/defaults.vim
 " Activate all the handy Windows key-bindings we're used to.
 " source $VIMRUNTIME/vimrc_example.vim
 source $VIMRUNTIME/mswin.vim
+set keymodel-=stopsel
 
 filetype plugin on
 filetype plugin indent on
@@ -32,6 +33,8 @@ Plug 'bling/vim-bufferline'
 Plug 'https://gitlab.com/dbeniamine/todo.txt-vim.git'
 Plug 'moll/vim-bbye'
 call plug#end()
+
+set cursorline
 
 " search config
 set ignorecase
