@@ -7,6 +7,15 @@ if executable('rls')
         \ })
 endif
 
+if executable('hie-wrapper')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'hie',
+        \ 'cmd': {server_info->['hie-wrapper']},
+        \ 'whitelist': ['haskell'],
+        \ })
+endif
+
+
 let g:LanguageClient_autoStart = 1
 
 " Maps K to hover, gd to goto definition, F2 to rename
