@@ -15,9 +15,9 @@ endif
 filetype plugin on
 filetype plugin indent on
 
-if isdirectory("~/vimfiles")
+if isdirectory($HOME . "/vimfiles")
     call plug#begin('~/vimfiles/plugged')
-else 
+else
     call plug#begin('~/.vim/plugged')
 endif
 Plug 'vim-syntastic/syntastic'
