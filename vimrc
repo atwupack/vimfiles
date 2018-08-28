@@ -1,13 +1,25 @@
-language en-US
+if has("win32")
+    language en-US
+else
+    language en_US.utf8
+endif
+
+
 source $VIMRUNTIME/defaults.vim
-" Activate all the handy Windows key-bindings we're used to.
-" source $VIMRUNTIME/vimrc_example.vim
-source $VIMRUNTIME/mswin.vim
+if has("win32")
+    " Activate all the handy Windows key-bindings we're used to.
+    " source $VIMRUNTIME/vimrc_example.vim
+    source $VIMRUNTIME/mswin.vim
+endif
 
 filetype plugin on
 filetype plugin indent on
 
-call plug#begin('~/vimfiles/plugged')
+if isdirectory("~/vimfiles")
+    call plug#begin('~/vimfiles/plugged')
+else 
+    call plug#begin('~/.vim/plugged')
+endif
 Plug 'vim-syntastic/syntastic'
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 Plug 'prabirshrestha/async.vim'
@@ -36,7 +48,11 @@ Plug 'haya14busa/vim-operator-flashy'
 call plug#end()
 
 " source all configuration for the different plugins
-runtime! conf\*.vim
+if has("win32")
+    runtime! conf\*.vim
+else
+    runtime! conf/*.vim
+endif
 
 " flashy
 map y <Plug>(operator-flashy)

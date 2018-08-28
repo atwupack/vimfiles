@@ -18,7 +18,11 @@ endif
 
 " set the font for the GUI
 if has('gui_running')
-    set guifont=Consolas:h9
+    if has("win32")
+        set guifont=Consolas:h10
+    else
+        set guifont=Inconsolata\ 10
+    endif
 endif
 
 " set theme
