@@ -1,11 +1,13 @@
 if has("win32")
-    language en-US
+    "    language en-US
+    language English_United States
 else
     language en_US.utf8
 endif
 
-
-source $VIMRUNTIME/defaults.vim
+if !has('nvim')
+    source $VIMRUNTIME/defaults.vim
+endif
 if has("win32")
     " Activate all the handy Windows key-bindings we're used to.
     " source $VIMRUNTIME/vimrc_example.vim
