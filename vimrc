@@ -50,6 +50,7 @@ Plug 'kana/vim-operator-user'
 Plug 'haya14busa/vim-operator-flashy'
 Plug 'purescript-contrib/purescript-vim' , { 'for': 'purescript' }
 Plug 'ElmCast/elm-vim' , { 'for': 'elm' }
+Plug 'idris-hackers/idris-vim' , { 'for': 'idris' }
 call plug#end()
 
 " source all configuration for the different plugins
