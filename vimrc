@@ -48,6 +48,8 @@ Plug 'https://gitlab.com/dbeniamine/todo.txt-vim.git'
 Plug 'moll/vim-bbye'
 Plug 'kana/vim-operator-user'
 Plug 'haya14busa/vim-operator-flashy'
+Plug 'purescript-contrib/purescript-vim' , { 'for': 'purescript' }
+Plug 'ElmCast/elm-vim' , { 'for': 'elm' }
 call plug#end()
 
 " source all configuration for the different plugins
