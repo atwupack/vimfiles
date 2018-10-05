@@ -15,9 +15,9 @@ endif
 " set the font for the GUI
 if has('gui_running')
     if has("win32")
-        set guifont=Consolas:h10
+        set guifont=Consolas:h11
     else
-        set guifont=Inconsolata\ 10
+        set guifont=Inconsolata\ 11
     endif
     " remove toolba
     " http://vim.wikia.com/wiki/Hide_toolbar_or_menus_to_see_more_text

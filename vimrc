@@ -51,6 +51,8 @@ Plug 'haya14busa/vim-operator-flashy'
 Plug 'purescript-contrib/purescript-vim' , { 'for': 'purescript' }
 Plug 'ElmCast/elm-vim' , { 'for': 'elm' }
 Plug 'idris-hackers/idris-vim' , { 'for': 'idris' }
+"Plug 'Shougo/deol.nvim'
+Plug 'nathanaelkane/vim-indent-guides'
 call plug#end()
 
 " source all configuration for the different plugins
