@@ -53,6 +53,7 @@ Plug 'ElmCast/elm-vim' , { 'for': 'elm' }
 Plug 'idris-hackers/idris-vim' , { 'for': 'idris' }
 "Plug 'Shougo/deol.nvim'
 Plug 'nathanaelkane/vim-indent-guides'
+Plug 'tyru/restart.vim'
 call plug#end()
 
 " source all configuration for the different plugins
