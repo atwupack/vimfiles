@@ -67,6 +67,9 @@ endif
 map y <Plug>(operator-flashy)
 nmap Y <Plug>(operator-flashy)$
 
+digraph !? 8253
+digraph ?! 8253
+
 " search config
 set ignorecase
 set smartcase
